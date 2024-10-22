@@ -20,7 +20,7 @@ type GameSession struct {
 var session GameSession
 var mots []string
 
-func LireMotsDepuisFichier(nomFichier string) ([]string, error) {
+func LireMots(nomFichier string) ([]string, error) {
 	contenu, err := os.ReadFile(nomFichier)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func genererMotAffiche(mot string, lettresEssayees []string) string {
 	return affichage
 }
 
-func (g *GameSession) DevinerLettre(lettre string) bool {
+func (g *GameSession) TryLetter(lettre string) bool {
 	if !contains(g.LettresEssayees, lettre) {
 		g.LettresEssayees = append(g.LettresEssayees, lettre)
 		if !strings.Contains(g.MotATrouver, lettre) {
@@ -64,7 +64,7 @@ func (g *GameSession) DevinerLettre(lettre string) bool {
 	return true
 }
 
-func (g *GameSession) EstTerminee() bool {
+func (g *GameSession) EstTermine() bool {
 	return g.EssaisRestants <= 0 || !strings.Contains(g.MotAffiche, "_")
 }
 
@@ -92,10 +92,10 @@ func playPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		lettre := r.FormValue("lettre")
 
-		session.DevinerLettre(lettre)
+		session.TryLetter(lettre)
 	}
 
-	if session.EstTerminee() {
+	if session.EstTermine() {
 		http.Redirect(w, r, "/end", http.StatusSeeOther)
 		return
 	}
@@ -118,10 +118,13 @@ var tpl *template.Template
 func main() {
 
 	var err error
-	mots, err = LireMotsDepuisFichier("mots.txt")
+	mots, err = LireMots("mots.txt")
 	if err != nil {
 		log.Fatal("Erreur lors de la lecture des mots :", err)
 	}
+
+	fileServer := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fileServer))
 
 	tpl, err = template.ParseGlob("templates/*.html")
 	if err != nil {

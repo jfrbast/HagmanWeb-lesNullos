@@ -39,6 +39,7 @@ Ensuite, nous avons effectué un sous-dossier templates avec nos pages .html et 
 ## Pour lancer notre projet
 
 - Dans un terminal taper "git clone https://github.com/jfrbast/HagmanWeb-lesNullos.git"
-- Tapez "cd "
-- Lancez le programme en tapant "go run ."
+- Tapez "cd HangmanWeb-lesNullos"
+- Lancez le programme en tapant "go run .   "
+- Lancez votre navigateur web et taper "/http://localhost:8080"
 - Amusez-vous !!

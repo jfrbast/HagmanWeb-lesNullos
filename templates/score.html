@@ -1,13 +1,22 @@
-{{define "score"}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, adipisci sapiente? Amet fugit modi labore, mollitia libero, id laudantium asperiores non consequatur officia dicta nobis quos officiis rerum! Explicabo, obcaecati!</p>
-</body>
-</html>
+{{define "scores"}}
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tableau des Scores</title>
+    </head>
+    <body>
+    <h1>Tableau des Scores</h1>
+    <ul>
+        {{range .}}
+            <li>{{.}}</li>
+        {{else}}
+            <li>Aucun score enregistré.</li>
+        {{end}}
+    </ul>
+    <a href="/">Retour à l'accueil</a>
+    <a href="/play">Retour à la partie</a>
+    </body>
+    </html>
 {{end}}

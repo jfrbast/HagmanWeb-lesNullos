@@ -1,12 +1,42 @@
+{{define "index"}}
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hangman - Accueil</title>
+    </head>
+    <body>
+    <h1>Bienvenue dans le jeu du Pendu</h1>
+    {{if .}}
+        <p style="color:red;">{{.}}</p>
+    {{end}}
+    <form action="/" method="post">
+        <label for="pseudo">Entrez votre pseudo :</label><br>
+        <input type="text" id="pseudo" name="pseudo" required><br><br>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head><title>Hangman - Accueil</title></head>
-{{template "header"}}
-<body>
-<h1>Bienvenue dans le jeu du Pendu</h1>
-<form action="/" method="post">
-    <button type="submit">Démarrer une nouvelle partie</button>
-</form>
-</body>
-</html>
+        <fieldset>
+            <legend>Choisissez une difficulté :</legend>
+            <input type="radio" id="normal" name="difficulte" value="Normal" required>
+            <label for="normal">Normal</label><br>
+
+            <input type="radio" id="difficile" name="difficulte" value="Difficile">
+            <label for="difficile">Difficile</label><br>
+
+            <input type="radio" id="extreme" name="difficulte" value="Extreme">
+            <label for="extreme">Extrême</label><br>
+
+            <input type="radio" id="nullos" name="difficulte" value="Nullos">
+            <label for="nullos">Nullos</label><br>
+
+            <input type="radio" id="entrainement" name="difficulte" value="Entrainement">
+            <label for="entrainement">Entraînement</label><br>
+        </fieldset>
+
+        <button type="submit">Démarrer une nouvelle partie</button>
+    </form>
+
+    <a href="/scores">Tableau des scores</a>
+    </body>
+    </html>
+{{end}}

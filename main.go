@@ -7,18 +7,27 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"regexp"
 	"strings"
 )
 
 type GameSession struct {
+	Pseudo          string
 	MotATrouver     string
 	LettresEssayees []string
 	EssaisRestants  int
 	MotAffiche      string
+	Difficulte      string
+	Mob             string
 }
 
 var session GameSession
 var mots []string
+
+func ValiderPseudo(pseudo string) bool {
+	matched, _ := regexp.MatchString("^[a-zA-Z0-9_-]+$", pseudo)
+	return matched
+}
 
 func LireMots(nomFichier string) ([]string, error) {
 	contenu, err := os.ReadFile(nomFichier)
@@ -29,15 +38,53 @@ func LireMots(nomFichier string) ([]string, error) {
 	return mots, nil
 }
 
-func NouvellePartie(mots []string) GameSession {
-
+func NouvellePartie(mots []string, difficulte string) GameSession {
 	mot := mots[rand.Intn(len(mots))]
+	essais := determinerEssais(difficulte)
+
+	mob := assignerMob(difficulte)
+
 	return GameSession{
 		MotATrouver:     strings.TrimSpace(mot),
 		LettresEssayees: []string{},
-		EssaisRestants:  10,
+		EssaisRestants:  essais,
 		MotAffiche:      genererMotAffiche(mot, []string{}),
+		Difficulte:      difficulte,
+		Mob:             mob,
 	}
+}
+
+func determinerEssais(difficulte string) int {
+	switch difficulte {
+	case "Normal":
+		return 8
+	case "Difficile":
+		return 6
+	case "Extreme":
+		return 4
+	case "Nullos":
+		return 200000
+	case "Entrainement":
+		return 12
+	default:
+		return 0
+	}
+}
+
+func assignerMob(difficulte string) string {
+	if difficulte == "Normal" {
+		mobs := []string{"Zombie", "Squelette", "Piglin", "Cochon"}
+		return mobs[rand.Intn(len(mobs))]
+	} else if difficulte == "Difficile" {
+		return "Creeper"
+	} else if difficulte == "Extreme" {
+		return "Slime"
+	} else if difficulte == "Nullos" {
+		return "Enderman"
+	} else if difficulte == "Entrainement" {
+		return "Armorstand"
+	}
+	return "Inconnu"
 }
 
 func genererMotAffiche(mot string, lettresEssayees []string) string {
@@ -79,19 +126,26 @@ func contains(s []string, str string) bool {
 
 func homePage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
+		pseudo := r.FormValue("pseudo")
+		difficulte := r.FormValue("difficulte")
 
-		session = NouvellePartie(mots)
+		if !ValiderPseudo(pseudo) {
+			tpl.ExecuteTemplate(w, "index", "Pseudo invalide. Seuls les lettres, chiffres, _ et - sont autorisés.")
+			return
+		}
+
+		session = NouvellePartie(mots, difficulte)
+		session.Pseudo = pseudo
 
 		http.Redirect(w, r, "/play", http.StatusSeeOther)
 		return
 	}
-	tpl.ExecuteTemplate(w, "index.html", nil)
+	tpl.ExecuteTemplate(w, "index", nil)
 }
 
 func playPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		lettre := r.FormValue("lettre")
-
 		session.TryLetter(lettre)
 	}
 
@@ -100,23 +154,46 @@ func playPage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tpl.ExecuteTemplate(w, "game.html", session)
+	tpl.ExecuteTemplate(w, "game", session)
 }
 
 func endPage(w http.ResponseWriter, r *http.Request) {
 	message := ""
 	if !strings.Contains(session.MotAffiche, "_") {
-		message = "Félicitations, vous avez gagné !"
+		message = "Félicitations, " + session.Pseudo + ", vous avez gagné !"
 	} else {
-		message = "Dommage, vous avez perdu. Le mot était : " + session.MotATrouver
+		message = "Dommage, " + session.Pseudo + ". Vous avez perdu. Le mot était : " + session.MotATrouver
 	}
-	tpl.ExecuteTemplate(w, "end.html", message)
+
+	score := session.Pseudo + " - Mot: " + session.MotATrouver + " - Essais restants: " + fmt.Sprint(session.EssaisRestants)
+	enregistrerScore(score)
+
+	tpl.ExecuteTemplate(w, "end", message)
+}
+
+func enregistrerScore(score string) {
+	f, err := os.OpenFile("Tabscore.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+	if err != nil {
+		log.Fatal("Erreur lors de l'ouverture du fichier des scores :", err)
+	}
+	defer f.Close()
+
+	if _, err = f.WriteString(score + "\n"); err != nil {
+		log.Fatal("Erreur lors de l'écriture du score :", err)
+	}
+}
+
+func scoresPage(w http.ResponseWriter, r *http.Request) {
+	contenu, err := os.ReadFile("Tabscore.txt")
+	if err != nil {
+		log.Fatal("Erreur lors de la lecture du fichier des scores :", err)
+	}
+	tpl.ExecuteTemplate(w, "scores", string(contenu))
 }
 
 var tpl *template.Template
 
 func main() {
-
 	var err error
 	mots, err = LireMots("mots.txt")
 	if err != nil {
@@ -134,6 +211,7 @@ func main() {
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/play", playPage)
 	http.HandleFunc("/end", endPage)
+	http.HandleFunc("/scores", scoresPage)
 
 	fmt.Println("Serveur démarré sur http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))

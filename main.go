@@ -113,6 +113,7 @@ func endPage(w http.ResponseWriter, r *http.Request) {
 	tpl.ExecuteTemplate(w, "end.html", message)
 }
 
+
 var tpl *template.Template
 
 func main() {

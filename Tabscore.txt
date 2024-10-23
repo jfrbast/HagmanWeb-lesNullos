@@ -1,5 +1,2 @@
-2024-10-22 16:46:13 - Difficulte:  - Joueur1 - Gagné
-2024-10-22 16:46:28 - Difficulte:  - Joueur1 - Gagné
-2024-10-22 16:47:30 - Difficulte:  - Joueur1 - Gagné
- - Mot:  - Essais restants: 0
- - Mot:  - Essais restants: 0
+Bastien - Difficulté: Nullos - Mot: miroir - Coups joués: -199988 - Essais restants: 199998 - Date: 23/10/2024
+Bastien - Difficulté: Normal - Mot: jardin - Coups joués: 13 - Essais restants: 1 - Date: 23/10/2024

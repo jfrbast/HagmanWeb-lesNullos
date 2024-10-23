@@ -1,0 +1,44 @@
+{{define "scores"}}
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tableau des Scores</title>
+    </head>
+    <body>
+    <h1>Tableau des Scores</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Pseudo</th>
+            <th>Difficulté</th>
+            <th>Mot</th>
+            <th>Coups Joués</th>
+            <th>Essais Restants</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range .}}
+            <tr>
+                <td>{{.Pseudo}}</td>
+                <td>{{.Difficulte}}</td>
+                <td>{{.MotATrouver}}</td>
+                <td>{{.CoupsJoues}}</td>
+                <td>{{.EssaisRestants}}</td>
+                <td>{{.Date}}</td>
+            </tr>
+        {{else}}
+            <tr>
+                <td colspan="6">Aucun score enregistré.</td>
+            </tr>
+        {{end}}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">Retour à l'accueil</a>
+    <a href="/play">Retour à la partie</a>
+    </body>
+    </html>
+{{end}}

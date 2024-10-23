@@ -9,6 +9,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"time"
 )
 
 type GameSession struct {
@@ -21,8 +22,18 @@ type GameSession struct {
 	Mob             string
 }
 
+type Score struct {
+	Pseudo         string
+	Difficulte     string
+	MotATrouver    string
+	CoupsJoues     int
+	EssaisRestants int
+	Date           string
+}
+
 var session GameSession
 var mots []string
+var date string
 
 func ValiderPseudo(pseudo string) bool {
 	matched, _ := regexp.MatchString("^[a-zA-Z0-9_-]+$", pseudo)
@@ -72,19 +83,21 @@ func determinerEssais(difficulte string) int {
 }
 
 func assignerMob(difficulte string) string {
-	if difficulte == "Normal" {
+	switch difficulte {
+	case "Normal":
 		mobs := []string{"Zombie", "Squelette", "Piglin", "Cochon"}
 		return mobs[rand.Intn(len(mobs))]
-	} else if difficulte == "Difficile" {
+	case "Difficile":
 		return "Creeper"
-	} else if difficulte == "Extreme" {
+	case "Extreme":
 		return "Slime"
-	} else if difficulte == "Nullos" {
+	case "Nullos":
 		return "Enderman"
-	} else if difficulte == "Entrainement" {
+	case "Entrainement":
 		return "Armorstand"
+	default:
+		return "Inconnu"
 	}
-	return "Inconnu"
 }
 
 func genererMotAffiche(mot string, lettresEssayees []string) string {
@@ -165,30 +178,71 @@ func endPage(w http.ResponseWriter, r *http.Request) {
 		message = "Dommage, " + session.Pseudo + ". Vous avez perdu. Le mot était : " + session.MotATrouver
 	}
 
-	score := session.Pseudo + " - Mot: " + session.MotATrouver + " - Essais restants: " + fmt.Sprint(session.EssaisRestants)
-	enregistrerScore(score)
+	enregistrerScore()
 
 	tpl.ExecuteTemplate(w, "end", message)
 }
 
-func enregistrerScore(score string) {
+func enregistrerScore() {
+
 	f, err := os.OpenFile("Tabscore.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
 	if err != nil {
 		log.Fatal("Erreur lors de l'ouverture du fichier des scores :", err)
 	}
 	defer f.Close()
 
-	if _, err = f.WriteString(score + "\n"); err != nil {
+	date := time.Now().Format("02/01/2006")
+
+	score := Score{
+		Pseudo:         session.Pseudo,
+		Difficulte:     session.Difficulte,
+		MotATrouver:    session.MotATrouver,
+		CoupsJoues:     len(session.LettresEssayees),
+		EssaisRestants: session.EssaisRestants,
+		Date:           date,
+	}
+
+	scoreComplet := fmt.Sprintf("%s - Difficulté: %s - Mot: %s - Coups joués: %d - Essais restants: %d - Date: %s",
+		score.Pseudo, score.Difficulte, score.MotATrouver, score.CoupsJoues, score.EssaisRestants, score.Date)
+
+	if _, err = f.WriteString(scoreComplet + "\n"); err != nil {
 		log.Fatal("Erreur lors de l'écriture du score :", err)
 	}
 }
+func lireScores() ([]Score, error) {
+	contenu, err := os.ReadFile("Tabscore.txt")
+	if err != nil {
+		return nil, err
+	}
+
+	lignes := strings.Split(string(contenu), "\n")
+	var scores []Score
+	for _, ligne := range lignes {
+		if ligne == "" {
+			continue
+		}
+
+		var score Score
+
+		_, err := fmt.Sscanf(ligne, "%s - Difficulté: %s - Mot: %s - Coups joués: %d - Essais restants: %d - Date: %s",
+			&score.Pseudo, &score.Difficulte, &score.MotATrouver, &score.CoupsJoues, &score.EssaisRestants, &score.Date)
+		if err != nil {
+			log.Println("Erreur lors de l'extraction du score :", err)
+			continue
+		}
+		scores = append(scores, score)
+	}
+
+	return scores, nil
+}
 
 func scoresPage(w http.ResponseWriter, r *http.Request) {
-	contenu, err := os.ReadFile("Tabscore.txt")
+	scores, err := lireScores()
 	if err != nil {
 		log.Fatal("Erreur lors de la lecture du fichier des scores :", err)
 	}
-	tpl.ExecuteTemplate(w, "scores", string(contenu))
+
+	tpl.ExecuteTemplate(w, "scores", scores)
 }
 
 var tpl *template.Template

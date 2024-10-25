@@ -1,0 +1,13 @@
+@font-face {
+    font-family:Minecraft;
+    src: url(http://localhost:8080/static/Font/minecraft/minecraft_font.ttf);
+}
+
+
+
+label {
+    font-family: Minecraft sans-serif ;
+}
+body {
+    background-color: #171615;
+}

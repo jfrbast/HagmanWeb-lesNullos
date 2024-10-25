@@ -113,6 +113,7 @@ func genererMotAffiche(mot string, lettresEssayees []string) string {
 }
 
 func (g *GameSession) TryLetter(lettre string) bool {
+	strings.ToLower(lettre)
 	if !contains(g.LettresEssayees, lettre) {
 		g.LettresEssayees = append(g.LettresEssayees, lettre)
 		if !strings.Contains(g.MotATrouver, lettre) {

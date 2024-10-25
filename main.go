@@ -246,6 +246,13 @@ func scoresPage(w http.ResponseWriter, r *http.Request) {
 
 	tpl.ExecuteTemplate(w, "scores", scores)
 }
+func proposPage(w http.ResponseWriter, r *http.Request) {
+	err := tpl.ExecuteTemplate(w, "propos", nil)
+	if err != nil {
+		log.Println("Erreur lors de l'exécution du template :", err)
+		http.Error(w, "Erreur lors de l'affichage de la page", http.StatusInternalServerError)
+	}
+}
 
 var tpl *template.Template
 
@@ -268,6 +275,7 @@ func main() {
 	http.HandleFunc("/play", playPage)
 	http.HandleFunc("/end", endPage)
 	http.HandleFunc("/scores", scoresPage)
+	http.HandleFunc("/propos", proposPage)
 
 	fmt.Println("Serveur démarré sur http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))

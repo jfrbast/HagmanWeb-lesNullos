@@ -1,1 +1,17 @@
-td { font-family: Minecraft , sans-serif }
+@font-face {
+    font-family: Minecraft;
+    src: url(http://localhost:8080/static/Font/minecraft/minecraft_font.woff);
+}
+@font-face {
+    font-family: MinecraftTEN;
+    src: url(http://localhost:8080/static/Font/minecraft/MinecraftTen.woff);
+}
+
+
+body{
+    font-family: MinecraftTEN, sans-serif;
+}
+
+td{
+    font-family: Minecraft, sans-serif;
+}

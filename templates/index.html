@@ -7,6 +7,7 @@
         <title>Hangman - Accueil</title>
 
         <link rel="stylesheet" href="/static/css/index.css">
+        <script src="/static/JS/Sons.js"></script>
     </head>
     <body>
     <h1>Bienvenue dans le jeu du Pendu</h1>
@@ -35,10 +36,11 @@
             <label for="entrainement">Entraînement</label><br>
         </fieldset>
 
-        <button type="submit">Démarrer une nouvelle partie</button>
+        <button type="submit">Démarrer une nouvelle partie<audio autoplay><source src="http://localhost:8080/static/sons/orb.mp3" /></audio> </button>
     </form>
 
     <a href="/scores">Tableau des scores</a>
+    <audio src="http://localhost:8080/static/sons/Creator.mp3" autoplay></audio>
     </body>
     </html>
 {{end}}

@@ -16,6 +16,7 @@ type GameSession struct {
 	Pseudo          string
 	MotATrouver     string
 	LettresEssayees []string
+	MotEssayes      []string
 	EssaisRestants  int
 	MotAffiche      string
 	Difficulte      string

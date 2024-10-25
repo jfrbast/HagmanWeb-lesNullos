@@ -97,4 +97,3 @@ miroir
 nu
 onde
 plume
-poire

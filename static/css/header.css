@@ -1,13 +1,18 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url(http://localhost:8080/static/Font/minecraft/minecraft_font.woff);
 }
 
 header {
 
     width: 100%;
     background-color: #313131;
+    font-family: Minecraft, sans-serif;
 }
 
 nav {

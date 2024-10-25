@@ -1,20 +1,22 @@
 {{define "header"}}
 <!DOCTYPE html>
 <html lang="en">
-<header>
-<h1>BABAABBABA</h1>
-<nav>
-
-        <li>
-            <a href="/score">Score</a>
-        </li>
-        <li>
-            <a href="/">Jouer</a>
-        </li>
-        <li>
-            <a href="//">A Propos</a>
-        </li>
-    
-</nav>
-</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="/static/css/header.css">
+</head>
+<body>
+    <header>
+        <nav class="links"> 
+                <ul>
+                    <li><a href="/scores">Scores</a></li>
+                    <li class="logo"><a href="header.html"><img src="/static/images/minecraft_title.png" alt="LogoHangmanWeb"></a></li>
+                    <li><a href="/propos">A Propos</a></li>
+                </ul>
+        </nav>
+    </header>
+</body>
+</html>
 {{end}}

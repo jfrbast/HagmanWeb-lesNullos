@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url(http://localhost:8080/static/Font/minecraft/minecraft_font.woff);
+}
+
+header {
+
+    width: 100%;
+    background-color: #313131;
+    font-family: Minecraft, sans-serif;
+}
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5em 0;
+}
+
+.logo img {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.links ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.links li {
+    list-style-type: none;
+}
+
+.links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding-bottom: 0.5em;
+    background-image: linear-gradient(#fff, #ffff);
+    background-size: 0% 0.1em;
+    background-position-x: 50%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    transition: background-size ease-in-out 0.5s;
+}
+
+.links a:hover {
+    background-size: 100% 0.15em;
+}

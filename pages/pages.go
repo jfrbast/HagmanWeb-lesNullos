@@ -1,16 +1,12 @@
 package pages
 
 import (
-	"Hangmanweb/game"
+	"Hangmanweb/templates"
 	"Hangmanweb/utils"
-	"html/template"
 	"log"
 	"net/http"
 	"strings"
 )
-
-var mots []string
-var tpl *template.Template
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
@@ -18,17 +14,16 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 		difficulte := r.FormValue("difficulte")
 
 		if !utils.ValiderPseudo(pseudo) {
-			tpl.ExecuteTemplate(w, "index", "Pseudo invalide. Seuls les lettres, chiffres, _ et - sont autorisés.")
+			templates.Tpl.ExecuteTemplate(w, "index", "Pseudo invalide. Seuls les lettres, chiffres, _ et - sont autorisés.")
 			return
 		}
 
-		utils.Session = game.NouvellePartie(mots, difficulte)
+		utils.Session = utils.NouvellePartie(utils.Mots, difficulte)
 		utils.Session.Pseudo = pseudo
-
 		http.Redirect(w, r, "/play", http.StatusSeeOther)
 		return
 	}
-	tpl.ExecuteTemplate(w, "index", nil)
+	templates.Tpl.ExecuteTemplate(w, "index", nil)
 }
 
 func PlayPage(w http.ResponseWriter, r *http.Request) {
@@ -41,7 +36,7 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/end", http.StatusSeeOther)
 		return
 	}
-	tpl.ExecuteTemplate(w, "game", utils.Session)
+	templates.Tpl.ExecuteTemplate(w, "game", utils.Session)
 }
 
 func EndPage(w http.ResponseWriter, r *http.Request) {
@@ -54,7 +49,7 @@ func EndPage(w http.ResponseWriter, r *http.Request) {
 
 	utils.EnregistrerScore()
 
-	tpl.ExecuteTemplate(w, "end", message)
+	templates.Tpl.ExecuteTemplate(w, "end", message)
 }
 
 func ScoresPage(w http.ResponseWriter, r *http.Request) {
@@ -63,10 +58,10 @@ func ScoresPage(w http.ResponseWriter, r *http.Request) {
 		log.Fatal("Erreur lors de la lecture du fichier des scores :", err)
 	}
 
-	tpl.ExecuteTemplate(w, "scores", scores)
+	templates.Tpl.ExecuteTemplate(w, "scores", scores)
 }
 func ProposPage(w http.ResponseWriter, r *http.Request) {
-	err := tpl.ExecuteTemplate(w, "propos", nil)
+	err := templates.Tpl.ExecuteTemplate(w, "propos", nil)
 	if err != nil {
 		log.Println("Erreur lors de l'exécution du template :", err)
 		http.Error(w, "Erreur lors de l'affichage de la page", http.StatusInternalServerError)

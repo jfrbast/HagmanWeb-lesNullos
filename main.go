@@ -153,31 +153,22 @@ package main
 
 import (
 	"Hangmanweb/pages"
+	"Hangmanweb/templates"
 	"Hangmanweb/utils"
 	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 )
 
-var mots []string
-
-var tpl *template.Template
-
 func main() {
 	var err error
-	mots, err = utils.LireMots("mots.txt")
+	utils.Mots, err = utils.LireMots("mots.txt")
 	if err != nil {
 		log.Fatal("Erreur lors de la lecture des mots :", err)
 	}
-
+	templates.InitTemplates()
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileServer))
-
-	tpl, err = template.ParseGlob("templates/*.html")
-	if err != nil {
-		log.Fatal("Erreur lors du chargement des templates :", err)
-	}
 
 	http.HandleFunc("/", pages.HomePage)
 	http.HandleFunc("/play", pages.PlayPage)

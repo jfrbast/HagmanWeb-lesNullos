@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"fmt"
+	"math/rand"
 	"regexp"
 	"strings"
 )
@@ -27,7 +29,6 @@ type Score struct {
 
 var Session GameSession
 var Mots []string
-var Date string
 var EnJeu bool
 
 func ValiderPseudo(pseudo string) bool {
@@ -57,4 +58,21 @@ func Contains(s []string, str string) bool {
 }
 func (g *GameSession) EstTermine() bool {
 	return g.EssaisRestants <= 0 || !strings.Contains(g.MotAffiche, "_")
+}
+
+func NouvellePartie(Mots []string, difficulte string) GameSession {
+	EnJeu = true
+	fmt.Println(len(Mots))
+	mot := Mots[rand.Intn(len(Mots))]
+	essais := DeterminerEssais(difficulte)
+	mob := AssignerMob(difficulte)
+
+	return GameSession{
+		MotATrouver:     strings.TrimSpace(mot),
+		LettresEssayees: []string{},
+		EssaisRestants:  essais,
+		MotAffiche:      GenererMotAffiche(mot, []string{}),
+		Difficulte:      difficulte,
+		Mob:             mob,
+	}
 }

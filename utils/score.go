@@ -64,6 +64,6 @@ func LireMots(nomFichier string) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	mots := strings.Split(string(contenu), "\n")
-	return mots, nil
+	Mots := strings.Split(string(contenu), "\n")
+	return Mots, nil
 }

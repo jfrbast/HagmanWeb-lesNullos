@@ -6,21 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jeu du Pendu</title>
         <link rel="stylesheet" href="/static/css/game.css">
+        <link rel="stylesheet" href="/static/css/game.css">
         <script src="/static/JS/Sons.js"></script>
     </head>
     {{template "header"}}
     <body>
+    <div><div>
+            <h1>Jeu du  test</h1>
+            <p>Mot à deviner : {{.MotAffiche}}</p>
+            <p>Essais restants : {{.EssaisRestants}}</p>
 
-    <audio autoplay><source src="http://localhost:8080/static/sons/orb.mp3" /></audio>
-    <h1>Jeu du Pendu</h1>
-    <p>Essais restants : {{.EssaisRestants}}</p>
-    <p>Mot à deviner : {{.MotAffiche}}</p>
-    <form action="/play" method="post">
-        <label for="lettre">Entrez une lettre :</label>
-        <input type="text" name="lettre" maxlength="1" required>
-        <button type="submit">Soumettre</button>
-    </form>
-    <p>Lettres déjà essayées : {{.LettresEssayees}}</p>
+            <p>Lettre(s) essayée(s) : {{.LettresEssayees}}</p>
+            <p>Mot(s) essayé(s) : {{.MotsEssayes}}</p>
+        </div>
+        <div>
+            <form action="/play/treatment" method="post">
+                <label for="mot">Entrer une valeur (lettre ou mot) :</label>
+                <input type="text" name="value" id="mot">
+                <button type="submit">Valider</button>
+            </form>
+            <img  class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
+        </div>
+    </div>
     </body>
     </html>
 {{end}}

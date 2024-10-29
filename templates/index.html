@@ -16,13 +16,14 @@
         <p style="color:red;">{{.}}</p>
     {{end}}
     <form action="/" method="post">
+    <div class="test">
         <label for="pseudo">Entrez votre pseudo :</label><br>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
 
-        <fieldset>
             <legend>Choisissez une difficulté :</legend>
-            <input type="radio" id="normal" name="difficulte" value="Normal" required>
+            <input type="radio" id="normal" name="difficulte" value="Normal" required> 
             <label for="normal">Normal</label><br>
+
 
             <input type="radio" id="difficile" name="difficulte" value="Difficile">
             <label for="difficile">Difficile</label><br>
@@ -35,13 +36,9 @@
 
             <input type="radio" id="entrainement" name="difficulte" value="Entrainement">
             <label for="entrainement">Entraînement</label><br>
-        </fieldset>
-
-        <button type="submit">Démarrer une nouvelle partie </button>
+</div>
+        <button class="bouton" type="submit">Démarrer une nouvelle partie </button>
     </form>
-
-    <a href="/scores">Tableau des scores</a>
-
     </body>
     </html>
 {{end}}

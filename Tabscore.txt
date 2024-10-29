@@ -9,3 +9,6 @@ Lilian - Difficulté: Nullos - Mot: poison - Coups joués: 14 - Essais restants:
 zae - Difficulté: Difficile - Mot: chaine - Coups joués: 10 - Essais restants: 0 - Date: 28/10/2024
 Lilian - Difficulté: Nullos - Mot: pintade - Coups joués: 14 - Essais restants: 199993 - Date: 28/10/2024
 Lilian - Difficulté: Normal - Mot: charbon - Coups joués: 13 - Essais restants: 2 - Date: 28/10/2024
+Lilian - Difficulté: Extreme - Mot: filon - Coups joués: 6 - Essais restants: 0 - Date: 29/10/2024
+Lilian - Difficulté: Extreme - Mot: pierre - Coups joués: 6 - Essais restants: 0 - Date: 29/10/2024
+lilian - Difficulté: Normal - Mot: golem - Coups joués: 9 - Essais restants: 4 - Date: 29/10/2024

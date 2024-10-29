@@ -1,6 +1,31 @@
-Bastien - Difficulté: Nullos - Mot: miroir - Coups joués: -199988 - Essais restants: 199998 - Date: 23/10/2024
-Bastien - Difficulté: Normal - Mot: jardin - Coups joués: 13 - Essais restants: 1 - Date: 23/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
+
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 27/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 1 - Essais restants: -2 - Date: 28/10/2024
+Bastien - Difficulté: Normal - Mot: geyser - Coups joués: 6 - Essais restants: 0 - Date: 28/10/2024
+bastien - Difficulté: Nullos - Mot: jungle - Coups joués: 13 - Essais restants: 199990 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 1 - Essais restants: -1 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 1 - Essais restants: -1 - Date: 28/10/2024
+Bastien - Difficulté: Extreme - Mot: nickel - Coups joués: 4 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 1 - Essais restants: 0 - Date: 28/10/2024
+Bastien - Difficulté: Difficile - Mot: bucher - Coups joués: 2 - Essais restants: 0 - Date: 28/10/2024
+bastien - Difficulté: Normal - Mot: poulet - Coups joués: 10 - Essais restants: -1 - Date: 28/10/2024
+bastien - Difficulté: Normal - Mot: cendre - Coups joués: 6 - Essais restants: 4 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+bastien - Difficulté: Normal - Mot: bateau - Coups joués: 8 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 28/10/2024

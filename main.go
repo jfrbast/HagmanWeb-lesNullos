@@ -1,170 +1,31 @@
-package main
+/*
 
-import (
-	"fmt"
-	"html/template"
-	"log"
-	"math/rand"
-	"net/http"
-	"os"
-	"regexp"
-	"strings"
-	"time"
-)
 
-type GameSession struct {
-	Pseudo          string
-	MotATrouver     string
-	LettresEssayees []string
-	MotEssayes      []string
-	EssaisRestants  int
-	MotAffiche      string
-	Difficulte      string
-	Mob             string
-}
 
-type Score struct {
-	Pseudo         string
-	Difficulte     string
-	MotATrouver    string
-	CoupsJoues     int
-	EssaisRestants int
-	Date           string
-}
 
-var session GameSession
-var mots []string
-var date string
 
-func ValiderPseudo(pseudo string) bool {
-	matched, _ := regexp.MatchString("^[a-zA-Z0-9_-]+$", pseudo)
-	return matched
-}
 
-func LireMots(nomFichier string) ([]string, error) {
-	contenu, err := os.ReadFile(nomFichier)
-	if err != nil {
-		return nil, err
-	}
-	mots := strings.Split(string(contenu), "\n")
-	return mots, nil
-}
-
-func NouvellePartie(mots []string, difficulte string) GameSession {
-	mot := mots[rand.Intn(len(mots))]
-	essais := determinerEssais(difficulte)
-
-	mob := assignerMob(difficulte)
-
-	return GameSession{
-		MotATrouver:     strings.TrimSpace(mot),
-		LettresEssayees: []string{},
-		EssaisRestants:  essais,
-		MotAffiche:      genererMotAffiche(mot, []string{}),
-		Difficulte:      difficulte,
-		Mob:             mob,
-	}
-}
-
-func determinerEssais(difficulte string) int {
-	switch difficulte {
-	case "Normal":
-		return 8
-	case "Difficile":
-		return 6
-	case "Extreme":
-		return 4
-	case "Nullos":
-		return 200000
-	case "Entrainement":
-		return 12
-	default:
-		return 0
-	}
-}
-
-func assignerMob(difficulte string) string {
-	switch difficulte {
-	case "Normal":
-		mobs := []string{"Zombie", "Squelette", "Piglin", "Cochon"}
-		return mobs[rand.Intn(len(mobs))]
-	case "Difficile":
-		return "Creeper"
-	case "Extreme":
-		return "Slime"
-	case "Nullos":
-		return "Enderman"
-	case "Entrainement":
-		return "Armorstand"
-	default:
-		return "Inconnu"
-	}
-}
-
-func genererMotAffiche(mot string, lettresEssayees []string) string {
-	affichage := ""
-	for _, lettre := range mot {
-		if contains(lettresEssayees, string(lettre)) {
-			affichage += string(lettre) + " "
-		} else {
-			affichage += "_ "
+func CheckValue(str string) (bool, string) {
+	strings.ToLower(str)
+	match := regexp.MustCompile("^[a-zA-Z]$").MatchString(str)
+	if match {
+		if len(str) == 1 {
+			return session.TryLetter(str)
+		}
+		if len(str) > 1 {
+			session.TryMot(str)
 		}
 	}
-	return affichage
+	return false, "Opus valeur invalide..."
 }
-
-func (g *GameSession) TryLetter(lettre string) bool {
-	strings.ToLower(lettre)
-	if !contains(g.LettresEssayees, lettre) {
-		g.LettresEssayees = append(g.LettresEssayees, lettre)
-		if !strings.Contains(g.MotATrouver, lettre) {
-			g.EssaisRestants--
-			return false
-		}
-		g.MotAffiche = genererMotAffiche(g.MotATrouver, g.LettresEssayees)
-	}
-	return true
-}
-
-func (g *GameSession) EstTermine() bool {
-	return g.EssaisRestants <= 0 || !strings.Contains(g.MotAffiche, "_")
-}
-
-func contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-	return false
-}
-
-func homePage(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodPost {
-		pseudo := r.FormValue("pseudo")
-		difficulte := r.FormValue("difficulte")
-
-		if !ValiderPseudo(pseudo) {
-			tpl.ExecuteTemplate(w, "index", "Pseudo invalide. Seuls les lettres, chiffres, _ et - sont autorisés.")
-			return
-		}
-
-		session = NouvellePartie(mots, difficulte)
-		session.Pseudo = pseudo
-
-		http.Redirect(w, r, "/play", http.StatusSeeOther)
-		return
-	}
-	tpl.ExecuteTemplate(w, "index", nil)
-}
-
 func playPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
-		lettre := r.FormValue("lettre")
-		session.TryLetter(lettre)
+		value := r.FormValue("value")
+		fmt.Println(CheckValue(value))
 	}
 
 	if session.EstTermine() {
+		enJeu = false
 		http.Redirect(w, r, "/end", http.StatusSeeOther)
 		return
 	}
@@ -173,6 +34,11 @@ func playPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func endPage(w http.ResponseWriter, r *http.Request) {
+	if enJeu {
+		http.Redirect(w, r, "/play", http.StatusSeeOther)
+		return
+	}
+
 	message := ""
 	if !strings.Contains(session.MotAffiche, "_") {
 		message = "Félicitations, " + session.Pseudo + ", vous avez gagné !"
@@ -181,12 +47,10 @@ func endPage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	enregistrerScore()
-
 	tpl.ExecuteTemplate(w, "end", message)
 }
 
 func enregistrerScore() {
-
 	f, err := os.OpenFile("Tabscore.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
 	if err != nil {
 		log.Fatal("Erreur lors de l'ouverture du fichier des scores :", err)
@@ -211,6 +75,7 @@ func enregistrerScore() {
 		log.Fatal("Erreur lors de l'écriture du score :", err)
 	}
 }
+
 func lireScores() ([]Score, error) {
 	contenu, err := os.ReadFile("Tabscore.txt")
 	if err != nil {
@@ -246,12 +111,14 @@ func scoresPage(w http.ResponseWriter, r *http.Request) {
 
 	tpl.ExecuteTemplate(w, "scores", scores)
 }
+
 func proposPage(w http.ResponseWriter, r *http.Request) {
-	err := tpl.ExecuteTemplate(w, "propos", nil)
+	scores, err := lireScores()
 	if err != nil {
-		log.Println("Erreur lors de l'exécution du template :", err)
-		http.Error(w, "Erreur lors de l'affichage de la page", http.StatusInternalServerError)
+		log.Fatal("Erreur lors de la lecture du à propos :", err)
 	}
+
+	tpl.ExecuteTemplate(w, "propos", scores)
 }
 
 var tpl *template.Template
@@ -276,6 +143,47 @@ func main() {
 	http.HandleFunc("/end", endPage)
 	http.HandleFunc("/scores", scoresPage)
 	http.HandleFunc("/propos", proposPage)
+
+	fmt.Println("Serveur démarré sur http://localhost:8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+*/
+
+package main
+
+import (
+	"Hangmanweb/pages"
+	"Hangmanweb/utils"
+	"fmt"
+	"html/template"
+	"log"
+	"net/http"
+)
+
+var mots []string
+
+var tpl *template.Template
+
+func main() {
+	var err error
+	mots, err = utils.LireMots("mots.txt")
+	if err != nil {
+		log.Fatal("Erreur lors de la lecture des mots :", err)
+	}
+
+	fileServer := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fileServer))
+
+	tpl, err = template.ParseGlob("templates/*.html")
+	if err != nil {
+		log.Fatal("Erreur lors du chargement des templates :", err)
+	}
+
+	http.HandleFunc("/", pages.HomePage)
+	http.HandleFunc("/play", pages.PlayPage)
+	http.HandleFunc("/end", pages.EndPage)
+	http.HandleFunc("/scores", pages.ScoresPage)
+	http.HandleFunc("/propos", pages.ProposPage)
 
 	fmt.Println("Serveur démarré sur http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))

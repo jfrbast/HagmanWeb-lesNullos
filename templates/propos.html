@@ -5,124 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/propos.css">
+    <link rel="icon" type="image/png" href="./static/Favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/Favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/static/Favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/Favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/Favicons/site.webmanifest" />
     <title>Hangman - A Propos</title>
 </head>
 {{template "header"}}
-<body>
 
-        <h1>HangmanWeb - LesNullos</h1>
+<h1>HangmanWeb - LesNullos</h1>
+<p class="subtitle">Un projet de première année (B1 Info/Cyber) à Ynov</p>
+</header>
 
-    <div class="container">
+<section id="presentation">
+    <h2>Présentation du Projet</h2>
+    <p>HangmanWeb est un jeu du pendu sur le web, développé en HTML, CSS, et GoLang.</p>
+</section>
 
-        <section>
+<section id="prerequisites">
+    <h2>Prérequis</h2>
+    <ul>
+        <li>Installation de <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+        <li>Installation de <a href="https://golang.org/" target="_blank">GoLang</a></li>
+        <li>Vérification de la version de GoLang : <code>go version</code> (version utilisée : Go 1.23.0)</li>
+    </ul>
+</section>
 
-            <h2>Présentation du Projet</h2>
+<section id="game-description">
+    <h2>Présentation du Jeu</h2>
+    <p>Notre version de HangmanWeb est un jeu de pendu sur le thème de Minecraft, avec plusieurs niveaux de difficulté et un tableau des scores.</p>
+</section>
 
-            <p>HangmanWeb est un projet de première année (B1 Info/Cyber) à Ynov, dont l'objectif est de créer un jeu du pendu sur le web en utilisant HTML et CSS, avec une programmation en GoLang.</p>
+<section id="project-organization">
+    <h2>Organisation du Projet</h2>
+    <ul>
+        <li><strong>HangmanWeb-Lesnullos</strong> : dossier principal</li>
+        <li><strong>main.go</strong> : fichier principal contenant le code du jeu</li>
+        <li><strong>mots.txt</strong> : liste de mots à deviner</li>
+        <li><strong>templates</strong> : fichiers HTML</li>
+        <li><strong>static</strong> : dossiers pour les ressources CSS et images</li>
+    </ul>
+</section>
 
-        </section>
+<section id="start-project">
+    <h2>Pour Lancer le Projet</h2>
+    <ol>
+        <li>Clonez le projet : <code>git clone https://github.com/jfrbast/HangmanWeb-lesNullos.git</code></li>
+        <li>Accédez au dossier : <code>cd HangmanWeb-lesNullos</code></li>
+        <li>Lancez le programme : <code>go run .</code></li>
+        <li>Ouvrez <code>http://localhost:8080</code> dans votre navigateur</li>
+    </ol>
+    <p>Amusez-vous !</p>
+</section>
 
-        <section>
-
-            <h2>Prérequis</h2>
-
-            <ul>
-
-                <li>Installation de <strong>Visual Studio Code</strong> : un éditeur de code. Téléchargez-le ici : <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>.</li>
-
-                <li>Installation de <strong>GoLang</strong> : téléchargez la version de Go via le site officiel : <a href="https://go.dev/doc/install" target="_blank">GoLang Installation</a>.</li>
-
-                <li>Vérification de la version installée : dans un terminal, exécutez la commande suivante :</li>
-            </ul>
-
-            <p><code>go version</code></p>
-
-            <p>Pour ce projet, nous avons utilisé la version <strong>Go 1.23.0</strong> (windows/amd64).</p>
-        </section>
-    
-        <section>
-
-            <h2>Présentation du Jeu</h2>
-
-            <p>Notre version de HangmanWeb est un jeu de pendu basé sur le thème de Minecraft, avec plusieurs niveaux de difficulté et un tableau des scores !</p>
-
-        </section>
-    
-        <section>
-
-            <h2>Organisation du Projet</h2>
-
-            <p>Nous avons structuré notre projet comme suit :</p>
-
-            <ul>
-
-                <li><strong>HangmanWeb-Lesnullos</strong> : dossier principal contenant le projet.</li>
-
-                <li><strong>main.go</strong> : fichier principal contenant le code du jeu du pendu.</li>
-
-                <li><strong>mots.txt</strong> : fichier texte contenant la liste des mots à deviner.</li>
-
-                <li><strong>templates</strong> : dossier contenant les fichiers HTML.</li>
-
-                <li><strong>static</strong> : dossier contenant les sous-dossiers suivants :</li>
-
-                    <ul>
-
-                        <li><strong>css</strong> : contient les fichiers CSS.</li>
-
-                        <li><strong>images</strong> : contient les fichiers image (format .png).</li>
-
-                    </ul>
-                    
-            </ul>
-
-        </section>
-    
-        <section>
-
-            <h2>Pour Lancer le Projet</h2>
-
-            <ol>
-
-                <li>Ouvrez un terminal et clonez le projet avec la commande suivante :</li>
-
-                <p><code>git clone https://github.com/jfrbast/HangmanWeb-lesNullos.git</code></p>
-
-                <li>Accédez au dossier du projet :</li>
-
-                <p><code>cd HangmanWeb-lesNullos</code></p>
-
-                <li>Lancez le programme en exécutant :</li>
-
-                <p><code>go run .</code></p>
-
-                <li>Ouvrez votre navigateur web et entrez l'URL suivante :</li>
-
-                <p><code>http://localhost:8080</code></p>
-
-                <li>Amusez-vous !</li>
-
-            </ol>
-
-        </section>
-    
-        <section>
-
-            <h2>Auteurs</h2>
-
-            <ul>
-
-                <li><a href="https://github.com/jfrbast" target="_blank">Bastien JOUFFRE</a></li>
-
-                <li><a href="https://github.com/LilianLPV" target="_blank">Lilian LE PIVER</a></li>
-
-            </ul>
-
-        </section>
-
-    </div>
-    
+<footer>
+    <h2>Auteurs</h2>
+    <p>Bastien JOUFFRE, Lilian LE PIVER</p>
+</footer>
 </body>
 </html>
 {{end}}
-

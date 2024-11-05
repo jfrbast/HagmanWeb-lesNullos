@@ -76,3 +76,9 @@ func NouvellePartie(Mots []string, difficulte string) GameSession {
 		Mob:             mob,
 	}
 }
+
+func IsAlpha(str string) bool {
+	match := regexp.MustCompile("^[a-zA-Z]+$").MatchString(str)
+	return match
+
+}

@@ -14,3 +14,6 @@ Lilian - Difficulté: Extreme - Mot: pierre - Coups joués: 6 - Essais restants:
 lilian - Difficulté: Normal - Mot: golem - Coups joués: 9 - Essais restants: 4 - Date: 29/10/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 29/10/2024
 Lilian - Difficulté: Normal - Mot: emeraude - Coups joués: 0 - Essais restants: 8 - Date: 03/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 04/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 05/11/2024
+bastien - Difficulté: Normal - Mot: echelle - Coups joués: 5 - Essais restants: 6 - Date: 05/11/2024

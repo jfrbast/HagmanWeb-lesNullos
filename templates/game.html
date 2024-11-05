@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="./static/Favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="/static/Favicons/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/static/Favicons/favicon.svg" />
         <link rel="shortcut icon" href="/static/Favicons/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/static/Favicons/apple-touch-icon.png" />
@@ -12,25 +12,18 @@
         <title>Jeu du Pendu</title>
         <script src="/static/JS/Sons.js"></script>
     </head>
-    {{template "header"}}
     <body>
-    <div><div>
-            <h1>Jeu du  test</h1>
-            <p>Mot à deviner : {{.MotAffiche}}</p>
-            <p>Essais restants : {{.EssaisRestants}}</p>
-
-            <p>Lettre(s) essayée(s) : {{.LettresEssayees}}</p>
-            <p>Mot(s) essayé(s) : {{.MotsEssayes}}</p>
-        </div>
-        <div>
-            <form action="/play/treatment" method="post">
-                <label for="mot">Entrer une valeur (lettre ou mot) :</label>
-                <input type="text" name="value" id="mot">
-                <button type="submit">Valider</button>
-            </form>
-            <img  class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
-        </div>
-    </div>
+    {{template "header"}}
+    <h1>Jeu du test</h1>
+    <p>Mot à deviner : {{.MotAffiche}}</p>
+    <p>Essais restants : {{.EssaisRestants}}</p>
+    <p>Lettre(s) essayée(s) : {{.LettresEssayees}}</p>
+    <form action="/play" method="post">
+        <label for="mot">Entrer une valeur (lettre ou mot) :</label>
+        <input type="text" name="value" id="mot" required>
+        <button type="submit">Submit</button>
+    </form>
+    <img class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
     </body>
     </html>
 {{end}}

@@ -17,3 +17,5 @@ Lilian - Difficulté: Normal - Mot: emeraude - Coups joués: 0 - Essais restants
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 04/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 05/11/2024
 bastien - Difficulté: Normal - Mot: echelle - Coups joués: 5 - Essais restants: 6 - Date: 05/11/2024
+Lilian - Difficulté: Normal - Mot: cuir - Coups joués: 8 - Essais restants: 4 - Date: 05/11/2024
+Lilian - Difficulté: Normal - Mot: oeufs - Coups joués: 8 - Essais restants: 5 - Date: 05/11/2024

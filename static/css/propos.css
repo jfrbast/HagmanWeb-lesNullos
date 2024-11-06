@@ -2,47 +2,31 @@
     font-family: Minecraft;
     src: url(http://localhost:8080/static/Font/minecraft/minecraft_font.woff);
 }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Minecraft, Arial, sans-serif;
+@font-face {
+    font-family: MinecraftTEN;
+    src: url(http://localhost:8080/static/Font/minecraft/MinecraftTen.woff);
+}
+body{
+    font-family: Minecraft, sans-serif;
 }
 
-body {
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 20px;
+.propos-page {
+    background-color: #171615;
+    color: #fff;
 }
 
-header {
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 8px;
-}
-
-header h1 {
-    font-size: 2em;
-}
-
-.subtitle {
+.propos-page .subtitle {
     font-size: 1.2em;
     font-style: italic;
 }
 
-section {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+.propos-page section {
+    color: #fff;
+    background-color: #171615;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-section h2 {
+.propos-page section h2 {
     font-size: 1.5em;
     color: #4CAF50;
     border-bottom: 2px solid #4CAF50;
@@ -50,35 +34,9 @@ section h2 {
     margin-bottom: 10px;
 }
 
-ul, ol {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-ul li, ol li {
-    margin: 8px 0;
-}
-
-a {
-    color: #4CAF50;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-code {
-    background-color: #eee;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-footer {
+.propos-page footer {
+    background-color: #313131;
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    color: #666;
-    font-size: 0.9em;
-    margin-top: 20px;
+    padding: 1em 0;
 }

@@ -1,6 +1,6 @@
 {{define "propos"}}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,57 +12,58 @@
     <link rel="manifest" href="/static/Favicons/site.webmanifest" />
     <title>Hangman - A Propos</title>
 </head>
-{{template "header"}}
+<body>
+    {{template "header"}}
+    <div class="propos-page">
+        <h1>HangmanWeb - LesNullos</h1>
+        <p class="subtitle">Un projet de première année (B1 Info/Cyber) à Ynov</p>
 
-<h1>HangmanWeb - LesNullos</h1>
-<p class="subtitle">Un projet de première année (B1 Info/Cyber) à Ynov</p>
-</header>
+        <section id="presentation">
+            <h2>Présentation du Projet</h2>
+            <p>HangmanWeb est un jeu du pendu sur le web, développé en HTML, CSS, et GoLang.</p>
+        </section>
 
-<section id="presentation">
-    <h2>Présentation du Projet</h2>
-    <p>HangmanWeb est un jeu du pendu sur le web, développé en HTML, CSS, et GoLang.</p>
-</section>
+        <section id="prerequisites">
+            <h2>Prérequis</h2>
+            <ul>
+                <li>Installation de <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+                <li>Installation de <a href="https://golang.org/" target="_blank">GoLang</a></li>
+                <li>Vérification de la version de GoLang : <code>go version</code> (version utilisée : Go 1.23.0)</li>
+            </ul>
+        </section>
 
-<section id="prerequisites">
-    <h2>Prérequis</h2>
-    <ul>
-        <li>Installation de <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
-        <li>Installation de <a href="https://golang.org/" target="_blank">GoLang</a></li>
-        <li>Vérification de la version de GoLang : <code>go version</code> (version utilisée : Go 1.23.0)</li>
-    </ul>
-</section>
+        <section id="game-description">
+            <h2>Présentation du Jeu</h2>
+            <p>Notre version de HangmanWeb est un jeu de pendu sur le thème de Minecraft, avec plusieurs niveaux de difficulté et un tableau des scores.</p>
+        </section>
 
-<section id="game-description">
-    <h2>Présentation du Jeu</h2>
-    <p>Notre version de HangmanWeb est un jeu de pendu sur le thème de Minecraft, avec plusieurs niveaux de difficulté et un tableau des scores.</p>
-</section>
+        <section id="project-organization">
+            <h2>Organisation du Projet</h2>
+            <ul>
+                <li><strong>HangmanWeb-Lesnullos</strong> : dossier principal</li>
+                <li><strong>main.go</strong> : fichier principal contenant le code du jeu</li>
+                <li><strong>mots.txt</strong> : liste de mots à deviner</li>
+                <li><strong>templates</strong> : fichiers HTML</li>
+                <li><strong>static</strong> : dossiers pour les ressources CSS et images</li>
+            </ul>
+        </section>
 
-<section id="project-organization">
-    <h2>Organisation du Projet</h2>
-    <ul>
-        <li><strong>HangmanWeb-Lesnullos</strong> : dossier principal</li>
-        <li><strong>main.go</strong> : fichier principal contenant le code du jeu</li>
-        <li><strong>mots.txt</strong> : liste de mots à deviner</li>
-        <li><strong>templates</strong> : fichiers HTML</li>
-        <li><strong>static</strong> : dossiers pour les ressources CSS et images</li>
-    </ul>
-</section>
+        <section id="start-project">
+            <h2>Pour Lancer le Projet</h2>
+            <ol>
+                <li>Clonez le projet : <code>git clone https://github.com/jfrbast/HangmanWeb-lesNullos.git</code></li>
+                <li>Accédez au dossier : <code>cd HangmanWeb-lesNullos</code></li>
+                <li>Lancez le programme : <code>go run .</code></li>
+                <li>Ouvrez <code>http://localhost:8080</code> dans votre navigateur</li>
+            </ol>
+            <p>Amusez-vous !</p>
+        </section>
 
-<section id="start-project">
-    <h2>Pour Lancer le Projet</h2>
-    <ol>
-        <li>Clonez le projet : <code>git clone https://github.com/jfrbast/HangmanWeb-lesNullos.git</code></li>
-        <li>Accédez au dossier : <code>cd HangmanWeb-lesNullos</code></li>
-        <li>Lancez le programme : <code>go run .</code></li>
-        <li>Ouvrez <code>http://localhost:8080</code> dans votre navigateur</li>
-    </ol>
-    <p>Amusez-vous !</p>
-</section>
-
-<footer>
-    <h2>Auteurs</h2>
-    <p>Bastien JOUFFRE, Lilian LE PIVER flop toi meme</p>
-</footer>
+        <footer>
+            <h2>Auteurs</h2>
+            <p>Bastien JOUFFRE, Lilian LE PIVER</p>
+        </footer>
+    </div>
 </body>
 </html>
 {{end}}

@@ -37,3 +37,4 @@ Bastien - Difficulté: Normal - Mot: monster - Coups joués: 9 - Essais restants
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
+bastien - Difficulté: Normal - Mot: etoile - Coups joués: 11 - Essais restants: 0 - Date: 12/11/2024

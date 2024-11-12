@@ -38,10 +38,11 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		val := r.FormValue("value")
 		utils.CheckValue(val)
+
 	}
 	if utils.Session.EstTermine() {
 		utils.EnJeu = false
-		http.Redirect(w, r, "/end", http.StatusSeeOther)
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 		return
 	}
 	err := templates.Tpl.ExecuteTemplate(w, "game", utils.Session)

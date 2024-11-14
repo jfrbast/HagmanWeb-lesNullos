@@ -22,9 +22,11 @@
     <p>Essais restants : {{.EssaisRestants}}</p>
     <p>Lettre(s) essayée(s) :</p>
     <ul>
+        <div class="contenu-lettre">
         {{range .LettresEssayees}}
             <li><img class="lettre" src="/static/images/{{.}}.png" alt="{{.}}"></li>
         {{end}}
+    </div>
     </ul>
     <form action="/play" method="post">
         <label for="mot">Entrer une valeur (lettre ou mot) :</label>

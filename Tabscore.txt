@@ -37,3 +37,4 @@ Bastien - Difficulté: Normal - Mot: monster - Coups joués: 9 - Essais restants
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
+Lilian - Difficulté: Normal - Mot: araignee - Coups joués: 6 - Essais restants: 5 - Date: 11/11/2024

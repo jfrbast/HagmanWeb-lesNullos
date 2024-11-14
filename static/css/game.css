@@ -30,9 +30,13 @@ body {
     margin-right: 50px;
 }
 
+.lettre {
+    max-width: 10%;
+}
+
 .imgmob {
     max-width: 40%;
     height: auto;
     margin-top: 20px;
-    margin-right:  30px; ;
+    margin-right:  30px;
 }

@@ -37,9 +37,18 @@ Bastien - Difficulté: Normal - Mot: monster - Coups joués: 9 - Essais restants
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
+<<<<<<< HEAD
 Lilian - Difficulté: Normal - Mot: araignee - Coups joués: 6 - Essais restants: 5 - Date: 11/11/2024
  - Difficulté:  - Mot:  - Coups joués: 1 - Essais restants: -1 - Date: 14/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 14/11/2024
 Lilian - Difficulté: Normal - Mot: montagne - Coups joués: 8 - Essais restants: 5 - Date: 14/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 14/11/2024
  - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 14/11/2024
+=======
+bastien - Difficulté: Normal - Mot: etoile - Coups joués: 11 - Essais restants: 0 - Date: 12/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 13/11/2024
+>>>>>>> d38ecaf30dea13519d835599bc647d55492bb46f

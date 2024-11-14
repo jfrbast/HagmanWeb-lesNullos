@@ -5,7 +5,7 @@ import (
 )
 
 func (g *GameSession) TryLetter(lettre string) (bool, string) {
-	lettre = strings.ToLower(lettre)
+	lettre = strings.ToUpper(lettre)
 	if !Contains(g.LettresEssayees, lettre) {
 		g.LettresEssayees = append(g.LettresEssayees, lettre)
 		if !strings.Contains(g.MotATrouver, lettre) {
@@ -18,7 +18,7 @@ func (g *GameSession) TryLetter(lettre string) (bool, string) {
 }
 
 func (g *GameSession) TryMot(mot string) (bool, string) {
-	mot = strings.ToLower(mot)
+	mot = strings.ToUpper(mot)
 	if !Contains(g.MotEssayes, mot) {
 		if strings.TrimSpace(mot) != g.MotATrouver {
 			g.EssaisRestants -= 2
@@ -30,7 +30,7 @@ func (g *GameSession) TryMot(mot string) (bool, string) {
 }
 
 func CheckValue(str string) (bool, string) {
-	str = strings.ToLower(str)
+	str = strings.ToUpper(str)
 
 	if IsAlpha(str) {
 		if len(str) == 1 {

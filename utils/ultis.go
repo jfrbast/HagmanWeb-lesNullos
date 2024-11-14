@@ -16,6 +16,7 @@ type GameSession struct {
 	MotAffiche      string
 	Difficulte      string
 	Mob             string
+	Letter          string
 }
 
 type Score struct {

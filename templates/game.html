@@ -20,7 +20,12 @@
     <h1>Jeu du test</h1>
     <p>Mot à deviner : {{.MotAffiche}}</p>
     <p>Essais restants : {{.EssaisRestants}}</p>
-    <p>Lettre(s) essayée(s) : {{.LettresEssayees}}</p>
+    <p>Lettre(s) essayée(s) :</p>
+    <ul>
+        {{range .LettresEssayees}}
+            <li><img class="lettre" src="/static/images/{{.}}.png" alt="{{.}}"></li>
+        {{end}}
+    </ul>
     <form action="/play" method="post">
         <label for="mot">Entrer une valeur (lettre ou mot) :</label>
         <input type="text" name="value" id="mot" required>

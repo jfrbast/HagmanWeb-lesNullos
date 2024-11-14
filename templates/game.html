@@ -23,7 +23,7 @@
     <p>Lettre(s) essayée(s) :</p>
     <ul>
         {{range .LettresEssayees}}
-            <li><img class="lettre" src="/static/images/{{.}}.png" alt="{{.}}"></li>
+            <li><img class="lettre" src="/static/images/{{.}}.png" alt="letter"></li>
         {{end}}
     </ul>
     <form action="/play" method="post">
@@ -31,6 +31,7 @@
         <input type="text" name="value" id="mot" required>
         <button type="submit">Valider</button>
     </form>
+        </div>
 </div>
     <img class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
     </body>

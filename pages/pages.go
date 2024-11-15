@@ -47,7 +47,7 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 	}
 	if utils.Session.EstTermine() {
 		utils.EnJeu = false
-		time.Sleep(2 * time.Second)
+		time.Sleep(500 * time.Millisecond)
 		http.Redirect(w, r, "/end", http.StatusSeeOther)
 		return
 	}

@@ -34,9 +34,19 @@ func CheckValue(str string) (bool, string) {
 
 	if IsAlpha(str) {
 		if len(str) == 1 {
+			if Contains(Session.LettresEssayees, str) {
+				Session.AlreadyEntered = true
+				return false, "Lettre déjà essayée"
+			}
+			Session.AlreadyEntered = false
 			return Session.TryLetter(str)
 		}
 		if len(str) > 1 {
+			if Contains(Session.MotEssayes, str) {
+				Session.AlreadyEntered = true
+				return false, "Mot déjà essayé"
+			}
+			Session.AlreadyEntered = false
 			return Session.TryMot(str)
 		}
 	}

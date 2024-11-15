@@ -55,3 +55,4 @@ bastien - Difficulté: Normal - Mot: etoile - Coups joués: 11 - Essais restants
 bastien - Difficulté: Normal - Mot: hermine - Coups joués: 8 - Essais restants: 0 - Date: 14/11/2024
 bastien - Difficulté: Normal - Mot: REDUCTEUR - Coups joués: 10 - Essais restants: 0 - Date: 14/11/2024
 bastien - Difficulté: Normal - Mot: AGENCE - Coups joués: 10 - Essais restants: 3 - Date: 14/11/2024
+Bastien - Difficulté: Entrainement - Mot: RENFORCEMENT - Coups joués: 17 - Essais restants: 0 - Date: 15/11/2024

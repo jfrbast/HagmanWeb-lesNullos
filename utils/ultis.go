@@ -17,6 +17,8 @@ type GameSession struct {
 	Difficulte      string
 	Mob             string
 	Letter          string
+	Correct         bool
+	AlreadyEntered  bool
 }
 
 type Score struct {
@@ -82,4 +84,12 @@ func IsAlpha(str string) bool {
 	match := regexp.MustCompile("^[a-zA-Z]+$").MatchString(str)
 	return match
 
+}
+func Check(val string) {
+	isCorrect, _ := CheckValue(val)
+	if isCorrect {
+		Session.Correct = true
+	} else {
+		Session.Correct = false
+	}
 }

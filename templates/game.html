@@ -19,33 +19,50 @@
     <div class="contenu">
         <div class="texte">
 
-    <h1>Jeu du test</h1>
-    <p>Mot à deviner : {{.MotAffiche}}</p>
-    <p>Essais restants :{{if eq .Mob "Enderman"}}
-        <a> ∞ </a>
-    {{else}}
-        {{.EssaisRestants}}
-    {{end}}</p>
-    <p>Lettre(s) essayée(s) :</p>
-    <ul>
-        {{range .LettresEssayees}}
-            <li><img class="lettre" src="/static/images/{{.}}.png" alt="letter"></li>
-        {{end}}
-    </ul>
-    <form action="/play" method="post">
-        <label for="mot">Entrer une valeur (lettre ou mot) :</label>
-        <input type="text" name="value" id="mot" required>
-        <button type="submit">Valider <audio id="audio" src="http://localhost:8080/static/sons/orb.mp3" autoplay> </audio></button>
-    </form>
+            <h1>Jeu du test</h1>
+            <p>Mot à deviner : {{.MotAffiche}}</p>
+            <p>Essais restants :{{if eq .Mob "Enderman"}}
+                <a> ∞ </a>
+                {{else}}
+                {{end}}</p>
+            {{.EssaisRestants}}
+            <p>Lettre(s) essayée(s) :</p>
+            <ul>
+                {{range .LettresEssayees}}
+                    <li><img class="lettre" src="/static/images/{{.}}.png" alt="letter"></li>
+                {{end}}
+            </ul>
+            <form action="/play" method="post">
+                <label for="mot">Entrer une valeur (lettre ou mot) :</label>
+                <input type="text" name="value" id="mot" required>
+                <button type="submit">Valider</button>
+            </form>
         </div>
-</div>
+    </div>
 
     {{if eq .Mob "Enderman"}}
         <img class="imgmob" src="/static/images/Enderman.png" alt="Enderman">
     {{else}}
-        <img class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
     {{end}}
+    <img class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
+
+    <audio id="correctSound" src="/static/sons/orb.mp3"></audio>
+    <audio id="incorrectSound" src="/static/sons/OOF.mp3"></audio>
+    <audio id="alreadyEnteredSound" src="/static/sons/Click1.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var correct = {{.Correct}};
+            var alreadyEntered = {{.AlreadyEntered}};
+            if (alreadyEntered) {
+                document.getElementById('alreadyEnteredSound').play();
+            } else if (correct) {
+                document.getElementById('correctSound').play();
+            } else {
+                document.getElementById('incorrectSound').play();
+            }
+        });
+    </script>
     </body>
-</div>
+    </div>
     </html>
 {{end}}

@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
 var win bool
@@ -39,14 +40,14 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 func PlayPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		val := r.FormValue("value")
-		utils.CheckValue(val)
-
+		utils.Check(val)
 	}
 	if utils.EnJeu == false {
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
 	if utils.Session.EstTermine() {
 		utils.EnJeu = false
+		time.Sleep(2 * time.Second)
 		http.Redirect(w, r, "/end", http.StatusSeeOther)
 		return
 	}
@@ -56,7 +57,6 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Erreur interne du serveur", http.StatusInternalServerError)
 	}
 }
-
 func EndPage(w http.ResponseWriter, r *http.Request) {
 	message := ""
 	if !strings.Contains(utils.Session.MotAffiche, "_") {

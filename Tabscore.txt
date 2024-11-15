@@ -58,3 +58,5 @@ bastien - Difficulté: Entrainement - Mot: CULTIVER - Coups joués: 14 - Essais 
 bastien - Difficulté: Normal - Mot: RAPIDEMENT - Coups joués: 12 - Essais restants: 5 - Date: 15/11/2024
 bastien - Difficulté: Extreme - Mot: TREFLE - Coups joués: 5 - Essais restants: 0 - Date: 15/11/2024
 Bastien - Difficulté: Extreme - Mot: ASSURANCE - Coups joués: 4 - Essais restants: 0 - Date: 15/11/2024
+Nomdetest - Difficulté: Extreme - Mot: CHEVAUCHE - Coups joués: 7 - Essais restants: 0 - Date: 15/11/2024
+bastien - Difficulté: Extreme - Mot: COMMANDES - Coups joués: 8 - Essais restants: 0 - Date: 15/11/2024

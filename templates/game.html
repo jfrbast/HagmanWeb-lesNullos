@@ -17,14 +17,14 @@
     {{template "header"}}
     <div class="contenu">
         <div class="texte">
-    <h1>Jeu du test</h1>
+    <h1>Jeu du Pendu</h1>
     <p>Mot à deviner : {{.MotAffiche}}</p>
     <p>Essais restants : {{.EssaisRestants}}</p>
     <p>Lettre(s) essayée(s) :</p>
-    <ul>
+    <ul>    
         <div class="contenu-lettre">
         {{range .LettresEssayees}}
-            <li><img class="lettre" src="/static/images/{{.}}.png" alt="{{.}}"></li>
+            <img class="lettre" src="/static/images/{{.}}.png" alt="letter">
         {{end}}
     </div>
     </ul>
@@ -33,6 +33,7 @@
         <input type="text" name="value" id="mot" required>
         <button type="submit">Valider</button>
     </form>
+        </div>
 </div>
     <img class="imgmob" src="/static/images/{{.Mob}}{{.EssaisRestants}}.png" alt="Img hangman">
     </body>

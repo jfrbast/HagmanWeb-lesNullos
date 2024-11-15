@@ -17,6 +17,16 @@ body {
     height: 100vh;
     margin: 0;
 }
+body {
+    color: #fff;
+    background-color: #171615;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
 .contenu {
     display: flex;
     justify-content: space-between;
@@ -24,16 +34,22 @@ body {
     width: 100%;
 }
 
-.text {
-    text-align: center;
+.contenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.texte {
+    text-align: left; 
     flex: 1;
-    margin-right: 50px;
 }
 
 .contenu-lettre {
     display: flex;
-    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
-    gap: 10px; /* Espace entre les lettres */
+    flex-wrap: wrap; 
+    gap: 10px; 
 }
 
 .lettre {
@@ -44,6 +60,5 @@ body {
 .imgmob {
     max-width: 40%;
     height: auto;
-    margin-top: 20px;
-    margin-right:  30px;
+    margin-left: 50px; 
 }

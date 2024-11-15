@@ -8,6 +8,8 @@ import (
 	"strings"
 )
 
+var win bool
+
 func HomePage(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		pseudo := r.FormValue("pseudo")
@@ -40,9 +42,12 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 		utils.CheckValue(val)
 
 	}
+	if utils.EnJeu == false {
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
 	if utils.Session.EstTermine() {
 		utils.EnJeu = false
-		http.Redirect(w, r, "/", http.StatusSeeOther)
+		http.Redirect(w, r, "/end", http.StatusSeeOther)
 		return
 	}
 	err := templates.Tpl.ExecuteTemplate(w, "game", utils.Session)
@@ -55,9 +60,14 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 func EndPage(w http.ResponseWriter, r *http.Request) {
 	message := ""
 	if !strings.Contains(utils.Session.MotAffiche, "_") {
-		message = "Félicitations, " + utils.Session.Pseudo + ", vous avez gagné !"
+
+		win = true
+		message = utils.PhrasesALeatoire(win)
+
 	} else {
-		message = "Dommage, " + utils.Session.Pseudo + ". Vous avez perdu. Le mot était : " + utils.Session.MotATrouver
+		win = false
+		message = utils.PhrasesALeatoire(win)
+
 	}
 
 	utils.EnregistrerScore()

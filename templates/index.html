@@ -16,7 +16,7 @@
     </head>
     {{template "header"}}
     <body>
-    <audio src="http://localhost:8080/static/sons/Creator.mp3" autoplay></audio>
+
     {{if .}}
         <p style="color:#ff0000;">{{.}}</p>
     {{end}}
@@ -42,7 +42,7 @@
             <input type="radio" id="entrainement" name="difficulte" value="Entrainement">
             <label for="entrainement">Entraînement</label><br>
 </div>
-        <button class="bouton" type="submit">Démarrer une nouvelle partie </button>
+        <button class="bouton" type="submit"><audio id="audio" src="http://localhost:8080/static/sons/orb.mp3" autoplay ></audio>Démarrer une nouvelle partie </button>
     </form>
     </body>
     </html>

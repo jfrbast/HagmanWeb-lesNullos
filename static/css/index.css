@@ -29,7 +29,8 @@ legend {
     justify-content: center;
 }
 
-input[type=text]{
+input[type=text] {
+    margin-top: 5px;
     width: 100%;
     font-size: 16px;
     font-weight: 300;
@@ -38,7 +39,6 @@ input[type=text]{
     border: 2px solid #fff;
     border-radius: 10px;
 }
-
 
 form {
     display: flex;

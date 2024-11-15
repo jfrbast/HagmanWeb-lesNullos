@@ -7,9 +7,11 @@
 
 label {
     font-family: Minecraft, sans-serif;
+
 }
 
 body {
+    font-family: Minecraft, sans-serif;
     color: #fff;
     background-color: #171615;
     display: flex;
@@ -19,6 +21,12 @@ body {
     margin: 0;
 }
 
-h1, p, form {
-    text-align: center;
+
+
+h1,
+p,
+form {
+    align-items: center;
+    justify-content: center;
+
 }

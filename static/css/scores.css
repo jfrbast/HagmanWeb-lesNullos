@@ -2,17 +2,18 @@
     font-family: Minecraft;
     src: url(http://localhost:8080/static/Font/minecraft/minecraft_font.woff);
 }
+
 @font-face {
     font-family: MinecraftTEN;
     src: url(http://localhost:8080/static/Font/minecraft/MinecraftTen.woff);
 }
 
 
-body{
+body {
     font-family: MinecraftTEN, sans-serif;
 }
 
-td{
+td {
     font-family: Minecraft, sans-serif;
 }
 
@@ -39,9 +40,11 @@ thead th:nth-child(3) {
 thead th:nth-child(4) {
     width: 10%;
 }
+
 thead th:nth-child(5) {
     width: 10%;
 }
+
 thead th:nth-child(6) {
     width: 20%;
 }
@@ -66,6 +69,7 @@ tbody td {
 tfoot th {
     text-align: right;
 }
+
 thead,
 tfoot {
     color: white;
@@ -75,11 +79,9 @@ tfoot {
 thead th,
 tfoot th,
 tfoot td {
-    background: linear-gradient(
-            to bottom,
+    background: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.5)
-    );
+            rgba(0, 0, 0, 0.5));
     border: 3px solid black;
 }
 

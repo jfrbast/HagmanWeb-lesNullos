@@ -66,7 +66,7 @@ func EndPage(w http.ResponseWriter, r *http.Request) {
 
 	} else {
 		win = false
-		message = utils.PhrasesALeatoire(win)
+		message = utils.PhrasesALeatoire(win) + " Le mot était : " + utils.Session.MotATrouver
 
 	}
 

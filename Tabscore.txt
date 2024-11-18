@@ -1,55 +1,4 @@
-Bastien - Difficulté: Nullos - Mot: miroir - Coups joués: -199988 - Essais restants: 199998 - Date: 23/10/2024
-Bastien - Difficulté: Normal - Mot: jardin - Coups joués: 13 - Essais restants: 1 - Date: 23/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 25/10/2024
-lilian - Difficulté: Difficile - Mot: vache - Coups joués: 6 - Essais restants: 5 - Date: 26/10/2024
-Lilian - Difficulté: Nullos - Mot: poison - Coups joués: 14 - Essais restants: 199991 - Date: 26/10/2024
-zae - Difficulté: Difficile - Mot: chaine - Coups joués: 10 - Essais restants: 0 - Date: 28/10/2024
-Lilian - Difficulté: Nullos - Mot: pintade - Coups joués: 14 - Essais restants: 199993 - Date: 28/10/2024
-Lilian - Difficulté: Normal - Mot: charbon - Coups joués: 13 - Essais restants: 2 - Date: 28/10/2024
-Lilian - Difficulté: Extreme - Mot: filon - Coups joués: 6 - Essais restants: 0 - Date: 29/10/2024
-Lilian - Difficulté: Extreme - Mot: pierre - Coups joués: 6 - Essais restants: 0 - Date: 29/10/2024
-lilian - Difficulté: Normal - Mot: golem - Coups joués: 9 - Essais restants: 4 - Date: 29/10/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 29/10/2024
-Lilian - Difficulté: Normal - Mot: emeraude - Coups joués: 0 - Essais restants: 8 - Date: 03/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 04/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 05/11/2024
-bastien - Difficulté: Normal - Mot: echelle - Coups joués: 5 - Essais restants: 6 - Date: 05/11/2024
-Lilian - Difficulté: Normal - Mot: cuir - Coups joués: 8 - Essais restants: 4 - Date: 05/11/2024
-Lilian - Difficulté: Normal - Mot: oeufs - Coups joués: 8 - Essais restants: 5 - Date: 05/11/2024
-Bastien - Difficulté: Extreme - Mot: chat - Coups joués: 5 - Essais restants: 0 - Date: 06/11/2024
-Bastien - Difficulté: Normal - Mot: panthere - Coups joués: 13 - Essais restants: 1 - Date: 10/11/2024
-bastien - Difficulté: Normal - Mot: roche - Coups joués: 11 - Essais restants: 0 - Date: 10/11/2024
-Bastien - Difficulté: Normal - Mot: monster - Coups joués: 9 - Essais restants: 6 - Date: 10/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 11/11/2024
-Lilian - Difficulté: Normal - Mot: araignee - Coups joués: 6 - Essais restants: 5 - Date: 11/11/2024
- - Difficulté:  - Mot:  - Coups joués: 1 - Essais restants: -1 - Date: 14/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 14/11/2024
-Lilian - Difficulté: Normal - Mot: montagne - Coups joués: 8 - Essais restants: 5 - Date: 14/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 14/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 14/11/2024
-bastien - Difficulté: Normal - Mot: etoile - Coups joués: 11 - Essais restants: 0 - Date: 12/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 12/11/2024
- - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 13/11/2024
->>>>>>> d38ecaf30dea13519d835599bc647d55492bb46f
+
 bastien - Difficulté: Normal - Mot: hermine - Coups joués: 8 - Essais restants: 0 - Date: 14/11/2024
 bastien - Difficulté: Normal - Mot: REDUCTEUR - Coups joués: 10 - Essais restants: 0 - Date: 14/11/2024
 bastien - Difficulté: Normal - Mot: AGENCE - Coups joués: 10 - Essais restants: 3 - Date: 14/11/2024
@@ -60,3 +9,5 @@ bastien - Difficulté: Extreme - Mot: TREFLE - Coups joués: 5 - Essais restants
 Bastien - Difficulté: Extreme - Mot: ASSURANCE - Coups joués: 4 - Essais restants: 0 - Date: 15/11/2024
 Nomdetest - Difficulté: Extreme - Mot: CHEVAUCHE - Coups joués: 7 - Essais restants: 0 - Date: 15/11/2024
 bastien - Difficulté: Extreme - Mot: COMMANDES - Coups joués: 8 - Essais restants: 0 - Date: 15/11/2024
+LeDaron - Difficulté: Normal - Mot: ENVELOPPE - Coups joués: 10 - Essais restants: 2 - Date: 16/11/2024
+LeDaron - Difficulté: Extreme - Mot: SQUELETTE - Coups joués: 7 - Essais restants: 0 - Date: 16/11/2024

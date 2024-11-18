@@ -11,3 +11,6 @@ Nomdetest - Difficulté: Extreme - Mot: CHEVAUCHE - Coups joués: 7 - Essais res
 bastien - Difficulté: Extreme - Mot: COMMANDES - Coups joués: 8 - Essais restants: 0 - Date: 15/11/2024
 LeDaron - Difficulté: Normal - Mot: ENVELOPPE - Coups joués: 10 - Essais restants: 2 - Date: 16/11/2024
 LeDaron - Difficulté: Extreme - Mot: SQUELETTE - Coups joués: 7 - Essais restants: 0 - Date: 16/11/2024
+Nomdetest - Difficulté: Difficile - Mot: MINUTEUR - Coups joués: 7 - Essais restants: 0 - Date: 18/11/2024
+Nomdetest - Difficulté: Normal - Mot: COLLECTEUR - Coups joués: 3 - Essais restants: 0 - Date: 18/11/2024
+ - Difficulté:  - Mot:  - Coups joués: 0 - Essais restants: 0 - Date: 18/11/2024

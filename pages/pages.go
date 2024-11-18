@@ -12,6 +12,9 @@ import (
 var win bool
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
+	if utils.EnJeu == true {
+		http.Redirect(w, r, "/play", http.StatusSeeOther)
+	}
 	if r.Method == http.MethodPost {
 		pseudo := r.FormValue("pseudo")
 		difficulte := r.FormValue("difficulte")
@@ -58,6 +61,9 @@ func PlayPage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func EndPage(w http.ResponseWriter, r *http.Request) {
+	if utils.EnJeu == true {
+		http.Redirect(w, r, "/play", http.StatusSeeOther)
+	}
 	message := ""
 	if !strings.Contains(utils.Session.MotAffiche, "_") {
 
@@ -80,6 +86,7 @@ func EndPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ScoresPage(w http.ResponseWriter, r *http.Request) {
+
 	scores, err := utils.LireScores()
 	if err != nil {
 		log.Println("Erreur lors de la lecture du fichier des scores :", err)
@@ -95,6 +102,9 @@ func ScoresPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ProposPage(w http.ResponseWriter, r *http.Request) {
+	if utils.EnJeu == true {
+		http.Redirect(w, r, "/play", http.StatusSeeOther)
+	}
 	err := templates.Tpl.ExecuteTemplate(w, "propos", nil)
 	if err != nil {
 		log.Println("Erreur lors de l'exécution du template :", err)
